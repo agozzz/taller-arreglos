@@ -38,5 +38,21 @@ function showList(array) {
 
 document.addEventListener("DOMContentLoaded", (e) => {
   // Escribe tu solución aquí
+
+  // Filtrar los elementos de tipo extraño:
+  // Uso del método filter que se usa para crear un nuevo array con todos los elementos que cumplan una condición específica. 
+  // Uso de typeof para decirle que solo seleccione los elementos que sean de tipo string. 
+  // (El operador typeof se utiliza para obtener el tipo de dato de una variable o expresión. Devuelve una cadena que representa el tipo de dato.)
+  const soloStrings = strangeArray.filter(element => typeof element === 'string'); 
+  console.log(soloStrings);
+
+  // Ordenar alfabéticamente:
+  // Uso del método sort para organizar las cadenas en orden alfabético.
+  // toLowerCase se usa dentro de sort para asegurar que la comparación sea insensible a mayúsculas/minúsculas.
+  // localeCompare es utilizado para comparar cadenas según las reglas de localización, lo que es útil para manejar correctamente el orden alfabético en diferentes idiomas y configuraciones regionales.
+  const soloStringsOrdenados = soloStrings.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  
+  console.log(soloStringsOrdenados);
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
+  showList(soloStringsOrdenados);
 });
